@@ -1,0 +1,28 @@
+Halothane
+Copyright © 2026 SFOLN LLC. All rights reserved.
+
+SOURCE CODE
+-----------
+The source code in this repository is licensed under the PolyForm Noncommercial
+License 1.0.0 (see LICENSE). It is source-available, not open source: commercial
+use, resale, and commercial redistribution are not permitted without a separate
+commercial license from SFOLN LLC.
+
+TRADEMARKS & BRAND ASSETS (NOT covered by the source-code license)
+------------------------------------------------------------------
+The following are trademarks and/or copyrighted assets of SFOLN LLC and are NOT
+licensed under the PolyForm Noncommercial License. All rights reserved. You may
+not use them in derivative or redistributed works, or to imply endorsement:
+
+  - The name "Halothane" and the SFOLN name/marks.
+  - The Halothane logo and app icon, including every image under:
+      Halothane/Assets.xcassets/AppIcon.appiconset/
+      site/assets/  (logo.png, mark.png, app-icon.png, og.png, favicon-*.png)
+
+If you build from source for a permitted noncommercial purpose, replace the
+above brand assets with your own before distributing your build.
+
+COMMERCIAL USE / PURCHASING
+---------------------------
+The official signed & notarized build is sold at https://halothane.app.
+For commercial licensing inquiries, contact SFOLN LLC.

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halothane — Calm memory control for macOS</title>
+  <meta name="description" content="Halothane watches every process's memory and gently pauses a runaway before it can panic your Mac. Focused. Lightweight. Essential." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Halothane — Calm memory control for macOS" />
+  <meta property="og:description" content="Watches every process's memory and gently pauses a runaway before it can panic your Mac." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://halothane.app" />
+  <meta property="og:image" content="https://halothane.app/assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon-256.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/app-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ─────────────────────────────  NAV  ───────────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Halothane home">
+        <img class="brand__mark" src="assets/mark.png" alt="" width="34" height="34" />
+        <span class="brand__name">Halothane</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#problem">Why</a>
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#buy" class="btn btn--small">Buy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ─────────────────────────────  HERO  ───────────────────────────── -->
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">Focused · Lightweight · Essential</p>
+          <h1 class="hero__title">
+            Memory control that keeps
+            <span class="grad">your Mac calm.</span>
+          </h1>
+          <p class="hero__sub">
+            Halothane watches every process's real memory footprint and gently
+            freezes a runaway <em>before</em> it can swallow your RAM and trigger
+            the dreaded out-of-memory panic. No drama. No data lost.
+          </p>
+          <div class="hero__cta">
+            <a href="#buy" class="btn btn--primary">
+              <svg viewBox="0 0 16 20" width="15" height="18" aria-hidden="true"><path fill="currentColor" d="M13.1 15.4c-.3.7-.5 1-.9 1.6-.6.9-1.4 2-2.4 2-1 0-1.2-.6-2.5-.6s-1.6.6-2.5.6c-1 0-1.8-1-2.4-1.9C.7 14.9.5 11.7 1.9 10c.7-.9 1.7-1.4 2.7-1.4 1 0 1.7.6 2.5.6.8 0 1.3-.6 2.5-.6.9 0 1.9.5 2.6 1.4-2.3 1.2-1.9 4.5.4 5.4zM9.4 4.5c.5-.6.8-1.5.7-2.4-.8.1-1.7.5-2.3 1.2-.5.5-.9 1.4-.7 2.3.8 0 1.7-.5 2.3-1.1z"/></svg>
+              Get Halothane — $19
+            </a>
+            <a href="#how" class="btn btn--ghost">See how it works</a>
+          </div>
+          <p class="hero__meta">$19 one-time · macOS 14 Sonoma or later · Apple Silicon &amp; Intel</p>
+        </div>
+
+        <!-- Live UI mock: the menu-bar dropdown -->
+        <div class="hero__art" aria-hidden="true">
+          <div class="menubar">
+            <span class="menubar__dot"></span>
+            <span class="menubar__dot"></span>
+            <span class="menubar__icon"><img src="assets/mark.png" alt="" width="16" height="16"/></span>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head">
+              <img class="panel__logo" src="assets/mark.png" alt="" width="22" height="22"/>
+              <div class="panel__title">
+                <strong>Halothane</strong>
+                <span class="tag tag--ok">✓ system-wide (all accounts)</span>
+              </div>
+              <span class="badge badge--warn">gauge · pressure</span>
+            </div>
+
+            <div class="panel__divider"></div>
+            <div class="panel__label">Paused</div>
+            <div class="row row--paused">
+              <span class="pill pill--red">paused</span>
+              <span class="row__name">node (acp-proxy)</span>
+              <span class="row__val row__val--red">98.4 GB</span>
+            </div>
+            <div class="row__actions">
+              <button>Resume</button><button>Quit</button><button>Force-Kill</button>
+            </div>
+
+            <div class="panel__divider"></div>
+            <div class="panel__label">Top memory</div>
+            <div class="row"><span class="row__name">Xcode</span><span class="row__val">12.8 GB</span></div>
+            <div class="row"><span class="row__name">Chrome <span class="exempt">exempt</span></span><span class="row__val row__val--blue">9.1 GB</span></div>
+            <div class="row"><span class="row__name">Zed <span class="arrow">↗</span></span><span class="row__val row__val--orange">6.4 GB</span></div>
+            <div class="row"><span class="row__name">Photoshop</span><span class="row__val">4.2 GB</span></div>
+
+            <div class="panel__divider"></div>
+            <div class="panel__foot">
+              <span class="link">⏸ Pause monitoring</span>
+              <span class="foot__right"><span class="link">Settings…</span><span class="link">Quit</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────  TRUST STRIP  ───────────────────────────── -->
+    <section class="strip">
+      <div class="container strip__inner">
+        <div class="strip__item"><strong>phys_footprint</strong><span>the metric Activity Monitor shows — not lossy RSS</span></div>
+        <div class="strip__item"><strong>SIGSTOP, not SIGKILL</strong><span>frozen, never killed — resume any time</span></div>
+        <div class="strip__item"><strong>Off by default</strong><span>auto-pause is opt-in, per app or globally</span></div>
+        <div class="strip__item"><strong>All accounts</strong><span>a root helper guards every login session</span></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────  PROBLEM / STORY  ───────────────────────────── -->
+    <section class="section" id="problem">
+      <div class="container section__narrow">
+        <p class="kicker">The reason it exists</p>
+        <h2 class="section__title">One leaky process shouldn't take down your whole machine.</h2>
+        <p class="prose">
+          Halothane was born from a real incident: a bug in an ACP proxy made an
+          editor balloon past <strong>100&nbsp;GB</strong>, choking the system and
+          triggering macOS's memory-panic screen — the one that force-quits your
+          apps and loses unsaved work.
+        </p>
+        <p class="prose">
+          macOS will happily let a single runaway eat every byte of RAM until the
+          kernel panics. There's no early brake, no "this one process is the
+          problem" — just a sudden, system-wide stall. Halothane is that missing
+          brake: a quiet supervisor that spots the runaway early and freezes
+          <em>only</em> the offender, leaving everything else untouched.
+        </p>
+        <p class="prose">
+          The name is the idea. Halothane is an anesthetic — and that's exactly
+          what the app does: it puts a runaway process gently <em>to sleep</em>
+          with a pause, rather than killing it. When you're ready, it wakes back
+          up right where it left off.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────  HOW IT WORKS  ───────────────────────────── -->
+    <section class="section section--soft" id="how">
+      <div class="container">
+        <div class="section__head">
+          <p class="kicker">How it works</p>
+          <h2 class="section__title">Sample. Warn. Pause.</h2>
+          <p class="section__lead">A tight loop that runs a few times a second, costs almost nothing, and never makes a decision you didn't ask for.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">01</div>
+            <h3>Sample</h3>
+            <p>Reads every process's true <code>phys_footprint</code> several times a second — including compressed pages that RSS quietly hides.</p>
+          </div>
+          <div class="step__arrow" aria-hidden="true">→</div>
+          <div class="step">
+            <div class="step__num">02</div>
+            <h3>Warn</h3>
+            <p>When a process crosses your threshold — or grows too fast — you get a calm heads-up in the menu bar and an always-on-top HUD.</p>
+          </div>
+          <div class="step__arrow" aria-hidden="true">→</div>
+          <div class="step">
+            <div class="step__num">03</div>
+            <h3>Pause</h3>
+            <p>If you've opted in, Halothane freezes the runaway and its whole process tree with <code>SIGSTOP</code>. It can't allocate another byte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────  HUD SHOWCASE  ───────────────────────────── -->
+    <section class="section showcase">
+      <div class="container showcase__inner">
+        <div class="showcase__copy">
+          <p class="kicker">Always-on-top HUD</p>
+          <h2 class="section__title">You see the problem the moment it starts.</h2>
+          <p class="prose">
+            A single floating card lists exactly what needs attention — what's
+            warning, what's paused, and the live footprint of each — with the same
+            one-tap actions everywhere: Resume, Quit, Force-Kill, or Exempt.
+          </p>
+          <ul class="checklist">
+            <li>Consolidated card — no notification spam</li>
+            <li>Lingers briefly so transient warnings don't flash away</li>
+            <li>Dismiss to snooze until something new trips</li>
+          </ul>
+        </div>
+
+        <div class="showcase__art" aria-hidden="true">
+          <div class="hud">
+            <div class="hud__head">
+              <span class="hud__icon">⏸</span>
+              <strong>Halothane</strong>
+              <span class="hud__expand">⤢</span>
+              <span class="hud__x">✕</span>
+            </div>
+            <div class="hud__item hud__item--red">
+              <div class="hud__row">
+                <span class="pill pill--red">paused</span>
+                <span class="hud__name">node (acp-proxy)</span>
+                <span class="hud__val hud__val--red">98.4 GB</span>
+              </div>
+              <div class="hud__actions"><button>Resume</button><button>Quit</button><button>Force-Kill</button><button>Exempt</button></div>
+            </div>
+            <div class="hud__item hud__item--orange">
+              <div class="hud__row">
+                <span class="pill pill--orange">warning</span>
+                <span class="hud__name">Zed</span>
+                <span class="hud__val hud__val--orange">6.4 GB</span>
+              </div>
+              <div class="hud__actions"><button>Pause</button><button>Exempt</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────  FEATURES  ───────────────────────────── -->
+    <section class="section section--soft" id="features">
+      <div class="container">
+        <div class="section__head">
+          <p class="kicker">Everything you need, nothing extra</p>
+          <h2 class="section__title">Built to be invisible until you need it.</h2>
+        </div>
+
+        <div class="features">
+          <article class="feat">
+            <div class="feat__icon">📈</div>
+            <h3>True memory, measured right</h3>
+            <p>Tracks <code>phys_footprint</code>, the same number Activity Monitor's Memory column reports — so a holding process can't hide behind collapsed RSS.</p>
+          </article>
+          <article class="feat">
+            <div class="feat__icon">🌳</div>
+            <h3>Whole-tree freeze</h3>
+            <p>Pauses the offending process and all its children, so a runaway can't dodge the brake by spawning workers.</p>
+          </article>
+          <article class="feat">
+            <div class="feat__icon">⚡</div>
+            <h3>Growth detection</h3>
+            <p>Catches a fast-climbing process by its <em>rate</em>, not just its size — stopping a leak long before it hits a hard ceiling.</p>
+          </article>
+          <article class="feat">
+            <div class="feat__icon">🧭</div>
+            <h3>Pressure-coupled</h3>
+            <p>Hooks the kernel's memory-pressure signal. On critical system pressure it pauses the largest non-exempt process automatically.</p>
+          </article>
+          <article class="feat">
+            <div class="feat__icon">🎚️</div>
+            <h3>Per-app rules</h3>
+            <p>LLM inference, VMs, and big builds are <em>supposed</em> to be heavy. Exempt them, or set custom thresholds per app.</p>
+          </article>
+          <article class="feat">
+            <div class="feat__icon">🛡️</div>
+            <h3>Never kills</h3>
+            <p>Auto-pause only ever freezes. Quitting or force-killing a paused app is always a deliberate choice you make by hand.</p>
+          </article>
+          <article class="feat">
+            <div class="feat__icon">👥</div>
+            <h3>Every account, at once</h3>
+            <p>A privileged helper supervises processes across all login sessions — fast-user-switched accounts included.</p>
+          </article>
+          <article class="feat">
+            <div class="feat__icon">🍃</div>
+            <h3>Featherweight</h3>
+            <p>A pure, UI-free engine sampling a handful of times a second. It lives in your menu bar and stays out of your way.</p>
+          </article>
+          <article class="feat">
+            <div class="feat__icon">😴</div>
+            <h3>Snooze anytime</h3>
+            <p>Heading into a heavy workload on purpose? Pause monitoring for 15 minutes, an hour, or until you say so.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────  BRAND ESSENCE  ───────────────────────────── -->
+    <section class="section essence">
+      <div class="container">
+        <div class="essence__grid">
+          <div class="essence__card">
+            <span class="essence__ic">🛡️</span>
+            <h3>Safe &amp; Trusted</h3>
+            <p>Clinical calm and reliability. It freezes, never kills — your work is always recoverable.</p>
+          </div>
+          <div class="essence__card">
+            <span class="essence__ic">🍃</span>
+            <h3>Lightweight &amp; Focused</h3>
+            <p>Effortless performance. One small binary doing exactly one job, exceptionally well.</p>
+          </div>
+          <div class="essence__card">
+            <span class="essence__ic">✨</span>
+            <h3>Essential by Design</h3>
+            <p>Everything you need, nothing extra. Sensible defaults, opt-in power, zero noise.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────  BUY  ───────────────────────────── -->
+    <section class="section download" id="buy">
+      <div class="download__glow" aria-hidden="true"></div>
+      <div class="container download__inner">
+        <img class="download__icon" src="assets/app-icon.png" alt="Halothane app icon" width="116" height="116" />
+        <h2 class="section__title">Bring some calm to your Mac.</h2>
+        <p class="section__lead">A one-time $19 purchase. Signed &amp; notarized. Lives quietly in your menu bar, ready the moment something goes wrong.</p>
+        <div class="hero__cta hero__cta--center">
+          <a href="#buy" data-buy class="btn btn--primary btn--lg">
+            <svg viewBox="0 0 16 20" width="16" height="20" aria-hidden="true"><path fill="currentColor" d="M13.1 15.4c-.3.7-.5 1-.9 1.6-.6.9-1.4 2-2.4 2-1 0-1.2-.6-2.5-.6s-1.6.6-2.5.6c-1 0-1.8-1-2.4-1.9C.7 14.9.5 11.7 1.9 10c.7-.9 1.7-1.4 2.7-1.4 1 0 1.7.6 2.5.6.8 0 1.3-.6 2.5-.6.9 0 1.9.5 2.6 1.4-2.3 1.2-1.9 4.5.4 5.4zM9.4 4.5c.5-.6.8-1.5.7-2.4-.8.1-1.7.5-2.3 1.2-.5.5-.9 1.4-.7 2.3.8 0 1.7-.5 2.3-1.1z"/></svg>
+            Buy Halothane — $19
+          </a>
+        </div>
+        <p class="hero__meta">One-time purchase · macOS 14 Sonoma or later · Apple Silicon &amp; Intel · ~2&nbsp;MB</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─────────────────────────────  FOOTER  ───────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/mark.png" alt="" width="28" height="28" />
+        <span>Halothane</span>
+      </div>
+      <p class="footer__tag">Calm memory control for macOS.</p>
+      <nav class="footer__links">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#buy">Buy</a>
+        <a href="https://github.com/sfoln/halothane">GitHub</a>
+      </nav>
+      <nav class="footer__links">
+        <a href="/terms.html">Terms</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/refund.html">Refunds</a>
+        <a href="mailto:support@halothane.app">support@halothane.app</a>
+      </nav>
+      <p class="footer__copy">© 2026 SFOLN LLC · Halothane · halothane.app</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a047a51a6a51447f8be903021c110310"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
