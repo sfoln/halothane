@@ -1,10 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Google Ads conversion measurement. Advertising personalization is disabled. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHM84E3T1E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('set', 'allow_ad_personalization_signals', false);
+    gtag('config', 'G-LHM84E3T1E');
+  </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Terms of Service — Halothane</title>
+  <title>Terms of Service | Halothane</title>
   <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://halothane.app/terms.html" />
   <link rel="icon" href="assets/favicon-32.png" />
   <style>
     :root { color-scheme: dark; }
@@ -34,7 +44,7 @@
     </header>
 
     <h1>Terms of Service</h1>
-    <p class="updated">Last updated: July 5, 2026</p>
+    <p class="updated">Last updated: July 21, 2026</p>
 
     <p>These terms govern your purchase and use of Halothane ("the software"), a macOS
        application provided by <strong>SFOLN LLC</strong> ("we", "us"). By purchasing or
@@ -48,9 +58,13 @@
        redistribute, or sublicense the software.</p>
 
     <h2>What Halothane does</h2>
-    <p>Halothane monitors process memory on your Mac and can pause (SIGSTOP) processes according
-       to the settings you choose. You are responsible for configuring it appropriately for your
-       system. It never deletes your data and never force-quits a process without your action.</p>
+    <p>Halothane monitors process memory on your Mac and can pause processes with the standard
+       POSIX SIGSTOP signal. Automatic threshold pausing is off by default. At critical macOS
+       memory pressure, the currently distributed version may automatically pause the largest
+       non-exempt process to protect system stability. It does not automatically force-quit a
+       process; Resume, Quit, and Force-Kill remain user actions. See the
+       <a href="/install-details.html">installation and behavior details</a> and
+       <a href="/uninstall.html">uninstall instructions</a>.</p>
 
     <h2>Payment</h2>
     <p>Halothane is a one-time purchase. Payments are processed by Stripe, which acts as the
@@ -73,7 +87,7 @@
        SFOLN LLC is organized, without regard to conflict-of-law rules.</p>
 
     <h2>Contact</h2>
-    <p><a href="mailto:support@halothane.app">support@halothane.app</a></p>
+    <p><!--email_off--><a href="mailto:support@halothane.app">support@halothane.app</a><!--/email_off--></p>
 
     <a class="back" href="/">← Back to halothane.app</a>
 

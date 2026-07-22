@@ -1,0 +1,39 @@
+# Halothane
+
+> Halothane is a lightweight memory guard for macOS that detects runaway processes and can pause them before they overwhelm the system.
+
+Halothane is a menu bar utility from SFOLN LLC. It continuously samples the true memory footprint of processes across all user accounts. When a process crosses a configured threshold or grows unusually fast, Halothane warns the user. If automatic threshold protection has been enabled, it pauses the process and its children with SIGSTOP. At critical macOS memory pressure, the currently distributed version may automatically pause the largest non-exempt process. It does not automatically force-quit a process.
+
+## Product facts
+
+- Platform: macOS 14 Sonoma or later
+- Hardware: Apple Silicon and Intel Macs
+- Price: $19 USD one-time purchase, no subscription
+- Refunds: 14-day money-back guarantee
+- Size: approximately 2 MB
+- Distribution: signed and notarized macOS app
+- Privacy: the app runs locally with no telemetry or analytics
+- Control: automatic pausing is opt-in globally or per app
+- Exceptions: apps can be exempted or assigned custom thresholds
+- Scope: a privileged helper monitors processes across all login sessions
+- Installation: requires administrator approval and installs an app, system LaunchDaemon, and per-user LaunchAgent
+- Removal: a complete public uninstall script and manual instructions are available
+- Publisher: SFOLN LLC
+
+## Links
+
+- [Official site](https://halothane.app/)
+- [How Halothane works](https://halothane.app/#how)
+- [Features](https://halothane.app/#features)
+- [Frequently asked questions](https://halothane.app/#faq)
+- [Buy Halothane](https://halothane.app/#buy)
+- [Installation and behavior details](https://halothane.app/install-details.html)
+- [Complete uninstall instructions](https://halothane.app/uninstall.html)
+- [Privacy policy](https://halothane.app/privacy.html)
+- [Terms of service](https://halothane.app/terms.html)
+- [Refund policy](https://halothane.app/refund.html)
+- [Source code](https://github.com/sfoln/halothane)
+
+## Contact
+
+- Email: support@halothane.app

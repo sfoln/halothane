@@ -1,4 +1,4 @@
-// Halothane landing — light progressive enhancement only.
+// Halothane landing page with light progressive enhancement.
 
 // Sticky-nav shadow once scrolled.
 const nav = document.getElementById('nav');
@@ -8,7 +8,7 @@ window.addEventListener('scroll', onScroll, { passive: true });
 
 // Reveal-on-scroll for major blocks.
 const targets = document.querySelectorAll(
-  '.section__head, .step, .feat, .essence__card, .showcase__copy, .showcase__art, .section__narrow, .download__inner, .strip__item'
+  '.section__head, .step, .feat, .essence__card, .showcase__copy, .showcase__art, .section__narrow, .faq__item, .download__inner, .strip__item'
 );
 targets.forEach((el) => el.classList.add('reveal'));
 
@@ -27,7 +27,7 @@ if ('IntersectionObserver' in window) {
   targets.forEach((el) => el.classList.add('is-in'));
 }
 
-// Buy flow — kicks off a Stripe Checkout Session via the store Worker.
+// Buy flow: kick off a Stripe Checkout Session via the store Worker.
 // Set STORE_ORIGIN to the Worker's public origin (custom domain or *.workers.dev).
 const STORE_ORIGIN = 'https://get.halothane.app';
 
@@ -36,7 +36,7 @@ document.querySelectorAll('[data-buy]').forEach((btn) => {
     e.preventDefault();
     const original = btn.textContent;
     btn.setAttribute('aria-busy', 'true');
-    btn.textContent = 'Redirecting to checkout…';
+    btn.textContent = 'Opening checkout…';
     try {
       const res = await fetch(`${STORE_ORIGIN}/api/checkout`, { method: 'POST' });
       const data = await res.json();
@@ -45,7 +45,7 @@ document.querySelectorAll('[data-buy]').forEach((btn) => {
     } catch (err) {
       btn.removeAttribute('aria-busy');
       btn.textContent = original;
-      alert('Sorry — checkout is temporarily unavailable. Please try again shortly.');
+      alert('Sorry, checkout is temporarily unavailable. Please try again shortly.');
     }
   });
 });

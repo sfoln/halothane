@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Installation and Behavior Details | Halothane</title>
+  <meta name="description" content="Exactly what Halothane installs, how its process monitoring and pausing work, and what data it does not collect." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://halothane.app/install-details.html" />
+  <link rel="icon" href="assets/favicon-32.png" />
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, Inter, system-ui, sans-serif; background: #0f1416; color: #e8eef0; line-height: 1.65; }
+    .wrap { max-width: 48rem; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    header { display: flex; align-items: center; gap: .6rem; margin-bottom: 2.5rem; }
+    header img { width: 30px; height: 30px; } header a { color: #e8eef0; text-decoration: none; font-weight: 700; }
+    h1 { font-size: 1.9rem; margin: 0 0 .3rem; } h2 { font-size: 1.2rem; margin: 2rem 0 .5rem; }
+    .updated { color: #8A9296; font-size: .9rem; margin: 0 0 2rem; } p, li { color: #c7ced1; }
+    a { color: #45C5D6; } code { color: #BFE9EC; } .callout { background: #151c1f; border: 1px solid #334247; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .back { display: inline-block; margin-top: 2.5rem; text-decoration: none; } footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #232a2e; color: #8A9296; font-size: .85rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header><img src="assets/mark.png" alt="" /><a href="/">Halothane</a></header>
+    <h1>Installation and behavior details</h1>
+    <p class="updated">Current distributed version: 0.1 · Updated July 21, 2026</p>
+
+    <div class="callout"><p><strong>Halothane is signed and notarized by Apple.</strong> Installation requires your administrator approval. The installer does not silently add unrelated software.</p></div>
+
+    <h2>What is installed</h2>
+    <ul>
+      <li><code>/Applications/Halothane.app</code> — the menu-bar interface.</li>
+      <li><code>/Library/LaunchDaemons/com.sfoln.Halothane.Helper.plist</code> — a privileged system helper that monitors process memory across login sessions.</li>
+      <li><code>/Library/LaunchAgents/com.sfoln.Halothane.GUI.plist</code> — starts the menu-bar interface for logged-in users.</li>
+      <li><code>/Library/Application Support/Halothane/</code> — local configuration.</li>
+    </ul>
+
+    <h2>Why a privileged helper is needed</h2>
+    <p>macOS process ownership boundaries prevent an ordinary menu-bar app from supervising every user's processes. The root helper reads process memory usage and performs only the process-control actions exposed by Halothane. The menu-bar app communicates with it through a local, code-signature-validated XPC connection.</p>
+
+    <h2>What process control means</h2>
+    <p>Halothane samples each process's physical memory footprint and can warn when a configured size or growth threshold is crossed. Automatic threshold pausing is off by default. If enabled, Halothane pauses the affected process tree with the standard POSIX <code>SIGSTOP</code> signal. Resume sends <code>SIGCONT</code>, allowing the process to continue where it stopped.</p>
+    <p>At critical macOS memory pressure, the current version may automatically pause the largest non-exempt process to protect system stability. It does not automatically force-quit processes. You can exempt apps or use custom thresholds.</p>
+    <p>Every paused process is listed in the Halothane menu with its memory size. Resume, Quit, and Force Quit are deliberate actions you choose there; Resume lets the process continue exactly where it stopped.</p>
+
+    <h2>Turning automatic action off without uninstalling</h2>
+    <ul>
+      <li>Automatic threshold pausing stays off unless you enable it, globally or per app.</li>
+      <li>The critical-pressure action is controlled by the Settings toggle <em>&ldquo;Pause largest process when system memory is critical.&rdquo;</em></li>
+      <li><em>Pause monitoring</em> in the menu disarms all warnings and automatic pauses for 15 minutes, 1 hour, 4 hours, or until you resume monitoring.</li>
+      <li>Individual apps can be exempted from all automatic action with per-app rules.</li>
+    </ul>
+
+    <h2>What Halothane does not do</h2>
+    <ul>
+      <li>It does not inject code into other applications.</li>
+      <li>It does not download or execute additional software.</li>
+      <li>It does not collect credentials or keystrokes.</li>
+      <li>The app has no telemetry and does not send process names, memory usage, or personal data off your Mac.</li>
+    </ul>
+
+    <h2>Verification and source review</h2>
+    <p>The distributed installer is signed with an Apple Developer ID Installer certificate and carries an accepted Apple notarization ticket. The application inside is signed with an Apple Developer ID Application certificate. The source is <a href="https://github.com/sfoln/halothane">available for review on GitHub</a> under the PolyForm Noncommercial License 1.0.0.</p>
+
+    <h2>Removal</h2>
+    <p>See the <a href="/uninstall.html">complete uninstall instructions</a>, including an inspectable removal script and manual path list.</p>
+
+    <a class="back" href="/">← Back to halothane.app</a>
+    <footer>© 2026 SFOLN LLC · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/uninstall.html">Uninstall</a></footer>
+  </div>
+</body>
+</html>

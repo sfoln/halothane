@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Ads conversion measurement. Advertising personalization is disabled. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHM84E3T1E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('set', 'allow_ad_personalization_signals', false);
+    gtag('config', 'G-LHM84E3T1E');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Halothane — Calm memory control for macOS</title>
-  <meta name="description" content="Halothane watches every process's memory and gently pauses a runaway before it can panic your Mac. Focused. Lightweight. Essential." />
+  <title>Halothane | Lightweight memory guard for macOS</title>
+  <meta name="description" content="Halothane is a lightweight Mac memory monitor that warns about runaway processes and can pause them before they overwhelm your system." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://halothane.app/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Halothane — Calm memory control for macOS" />
-  <meta property="og:description" content="Watches every process's memory and gently pauses a runaway before it can panic your Mac." />
+  <meta property="og:title" content="Halothane | Lightweight memory guard for macOS" />
+  <meta property="og:description" content="Monitors Mac process memory, warns about runaways, and can pause them before they overwhelm your system." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://halothane.app" />
+  <meta property="og:url" content="https://halothane.app/" />
   <meta property="og:image" content="https://halothane.app/assets/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Halothane",
+      "url": "https://halothane.app/",
+      "image": "https://halothane.app/assets/app-icon.png",
+      "description": "A lightweight memory guard for macOS that spots runaway processes and pauses them before they overwhelm your system.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS 14 or later",
+      "processorRequirements": "Apple Silicon or Intel processor",
+      "fileSize": "Approximately 2 MB",
+      "featureList": [
+        "Monitors true process memory across all user accounts",
+        "Warns when a process crosses a threshold or grows too quickly",
+        "Can pause a runaway process tree without automatically killing it",
+        "Supports per-app thresholds and exemptions",
+        "Runs locally without app telemetry"
+      ],
+      "sameAs": "https://github.com/sfoln/halothane",
+      "offers": {
+        "@type": "Offer",
+        "price": "19.00",
+        "priceCurrency": "USD",
+        "url": "https://halothane.app/#buy",
+        "availability": "https://schema.org/InStock"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SFOLN LLC"
+      }
+    }
+  </script>
 
   <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon-256.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
@@ -20,7 +65,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -37,7 +82,8 @@
         <a href="#problem">Why</a>
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
-        <a href="#buy" class="btn btn--small">Buy</a>
+        <a href="#faq">FAQ</a>
+        <a href="#buy" data-buy class="btn btn--small">Buy for $19</a>
       </nav>
     </div>
   </header>
@@ -47,30 +93,32 @@
     <!-- ─────────────────────────────  HERO  ───────────────────────────── -->
     <section class="hero">
       <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--one" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--two" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__copy">
+          <img class="hero__icon" src="assets/app-icon.png" alt="Halothane app icon" width="104" height="104" />
           <p class="eyebrow">Focused · Lightweight · Essential</p>
           <h1 class="hero__title">
-            Memory control that keeps
-            <span class="grad">your Mac calm.</span>
+            Keep your Mac calm,
+            <span class="grad">whatever is running.</span>
           </h1>
           <p class="hero__sub">
-            Halothane watches every process's real memory footprint and gently
-            freezes a runaway <em>before</em> it can swallow your RAM and trigger
-            the dreaded out-of-memory panic. No drama. No data lost.
+            Halothane is a lightweight memory guard for macOS. It spots runaway
+            processes early and pauses them before they can overwhelm your system.
           </p>
           <div class="hero__cta">
-            <a href="#buy" class="btn btn--primary">
+            <a href="#buy" data-buy class="btn btn--primary btn--hero">
               <svg viewBox="0 0 16 20" width="15" height="18" aria-hidden="true"><path fill="currentColor" d="M13.1 15.4c-.3.7-.5 1-.9 1.6-.6.9-1.4 2-2.4 2-1 0-1.2-.6-2.5-.6s-1.6.6-2.5.6c-1 0-1.8-1-2.4-1.9C.7 14.9.5 11.7 1.9 10c.7-.9 1.7-1.4 2.7-1.4 1 0 1.7.6 2.5.6.8 0 1.3-.6 2.5-.6.9 0 1.9.5 2.6 1.4-2.3 1.2-1.9 4.5.4 5.4zM9.4 4.5c.5-.6.8-1.5.7-2.4-.8.1-1.7.5-2.3 1.2-.5.5-.9 1.4-.7 2.3.8 0 1.7-.5 2.3-1.1z"/></svg>
-              Get Halothane — $19
+              Buy Halothane for $19
             </a>
-            <a href="#how" class="btn btn--ghost">See how it works</a>
           </div>
-          <p class="hero__meta">$19 one-time · macOS 14 Sonoma or later · Apple Silicon &amp; Intel</p>
+          <p class="hero__meta">One-time purchase · macOS 14 or later · Apple Silicon and Intel</p>
+          <a href="#how" class="hero__learn">See how it works <span aria-hidden="true">↓</span></a>
         </div>
 
         <!-- Live UI mock: the menu-bar dropdown -->
-        <div class="hero__art" aria-hidden="true">
+        <div class="hero__art" role="img" aria-label="Preview of Halothane monitoring a Mac">
           <div class="menubar">
             <span class="menubar__dot"></span>
             <span class="menubar__dot"></span>
@@ -118,8 +166,8 @@
     <!-- ─────────────────────────────  TRUST STRIP  ───────────────────────────── -->
     <section class="strip">
       <div class="container strip__inner">
-        <div class="strip__item"><strong>phys_footprint</strong><span>the metric Activity Monitor shows — not lossy RSS</span></div>
-        <div class="strip__item"><strong>SIGSTOP, not SIGKILL</strong><span>frozen, never killed — resume any time</span></div>
+        <div class="strip__item"><strong>True memory</strong><span>the same metric Activity Monitor uses</span></div>
+        <div class="strip__item"><strong>Pause-first</strong><span>stopped processes remain intact and can be resumed</span></div>
         <div class="strip__item"><strong>Off by default</strong><span>auto-pause is opt-in, per app or globally</span></div>
         <div class="strip__item"><strong>All accounts</strong><span>a root helper guards every login session</span></div>
       </div>
@@ -133,18 +181,18 @@
         <p class="prose">
           Halothane was born from a real incident: a bug in an ACP proxy made an
           editor balloon past <strong>100&nbsp;GB</strong>, choking the system and
-          triggering macOS's memory-panic screen — the one that force-quits your
+          triggering macOS's memory-panic screen. It is the one that force-quits your
           apps and loses unsaved work.
         </p>
         <p class="prose">
           macOS will happily let a single runaway eat every byte of RAM until the
           kernel panics. There's no early brake, no "this one process is the
-          problem" — just a sudden, system-wide stall. Halothane is that missing
+          problem," only a sudden, system-wide stall. Halothane is that missing
           brake: a quiet supervisor that spots the runaway early and freezes
           <em>only</em> the offender, leaving everything else untouched.
         </p>
         <p class="prose">
-          The name is the idea. Halothane is an anesthetic — and that's exactly
+          The name is the idea. Halothane is an anesthetic, and that's exactly
           what the app does: it puts a runaway process gently <em>to sleep</em>
           with a pause, rather than killing it. When you're ready, it wakes back
           up right where it left off.
@@ -158,20 +206,20 @@
         <div class="section__head">
           <p class="kicker">How it works</p>
           <h2 class="section__title">Sample. Warn. Pause.</h2>
-          <p class="section__lead">A tight loop that runs a few times a second, costs almost nothing, and never makes a decision you didn't ask for.</p>
+          <p class="section__lead">A tight loop that runs a few times a second, costs almost nothing, and keeps the process under your control. Automatic threshold protection is off by default; at critical macOS memory pressure, Halothane may pause the largest non-exempt process to protect system stability.</p>
         </div>
 
         <div class="steps">
           <div class="step">
             <div class="step__num">01</div>
             <h3>Sample</h3>
-            <p>Reads every process's true <code>phys_footprint</code> several times a second — including compressed pages that RSS quietly hides.</p>
+            <p>Reads every process's true <code>phys_footprint</code> several times a second, including compressed pages that RSS quietly hides.</p>
           </div>
           <div class="step__arrow" aria-hidden="true">→</div>
           <div class="step">
             <div class="step__num">02</div>
             <h3>Warn</h3>
-            <p>When a process crosses your threshold — or grows too fast — you get a calm heads-up in the menu bar and an always-on-top HUD.</p>
+            <p>When a process crosses your threshold or grows too fast, you get a calm heads-up in the menu bar and an always-on-top HUD.</p>
           </div>
           <div class="step__arrow" aria-hidden="true">→</div>
           <div class="step">
@@ -190,12 +238,12 @@
           <p class="kicker">Always-on-top HUD</p>
           <h2 class="section__title">You see the problem the moment it starts.</h2>
           <p class="prose">
-            A single floating card lists exactly what needs attention — what's
-            warning, what's paused, and the live footprint of each — with the same
+            A single floating card lists exactly what needs attention: what's
+            warning, what's paused, and the live footprint of each. You get the same
             one-tap actions everywhere: Resume, Quit, Force-Kill, or Exempt.
           </p>
           <ul class="checklist">
-            <li>Consolidated card — no notification spam</li>
+            <li>One consolidated card with no notification spam</li>
             <li>Lingers briefly so transient warnings don't flash away</li>
             <li>Dismiss to snooze until something new trips</li>
           </ul>
@@ -240,47 +288,47 @@
 
         <div class="features">
           <article class="feat">
-            <div class="feat__icon">📈</div>
+            <div class="feat__icon" aria-hidden="true">↗</div>
             <h3>True memory, measured right</h3>
-            <p>Tracks <code>phys_footprint</code>, the same number Activity Monitor's Memory column reports — so a holding process can't hide behind collapsed RSS.</p>
+            <p>Tracks <code>phys_footprint</code>, the same number Activity Monitor's Memory column reports, so a holding process can't hide behind collapsed RSS.</p>
           </article>
           <article class="feat">
-            <div class="feat__icon">🌳</div>
+            <div class="feat__icon" aria-hidden="true">⌘</div>
             <h3>Whole-tree freeze</h3>
             <p>Pauses the offending process and all its children, so a runaway can't dodge the brake by spawning workers.</p>
           </article>
           <article class="feat">
-            <div class="feat__icon">⚡</div>
+            <div class="feat__icon" aria-hidden="true">⌁</div>
             <h3>Growth detection</h3>
-            <p>Catches a fast-climbing process by its <em>rate</em>, not just its size — stopping a leak long before it hits a hard ceiling.</p>
+            <p>Catches a fast-climbing process by its <em>rate</em>, not just its size, stopping a leak long before it hits a hard ceiling.</p>
           </article>
           <article class="feat">
-            <div class="feat__icon">🧭</div>
+            <div class="feat__icon" aria-hidden="true">◉</div>
             <h3>Pressure-coupled</h3>
             <p>Hooks the kernel's memory-pressure signal. On critical system pressure it pauses the largest non-exempt process automatically.</p>
           </article>
           <article class="feat">
-            <div class="feat__icon">🎚️</div>
+            <div class="feat__icon" aria-hidden="true">≡</div>
             <h3>Per-app rules</h3>
             <p>LLM inference, VMs, and big builds are <em>supposed</em> to be heavy. Exempt them, or set custom thresholds per app.</p>
           </article>
           <article class="feat">
-            <div class="feat__icon">🛡️</div>
-            <h3>Never kills</h3>
-            <p>Auto-pause only ever freezes. Quitting or force-killing a paused app is always a deliberate choice you make by hand.</p>
+            <div class="feat__icon" aria-hidden="true">◇</div>
+            <h3>Reversible action</h3>
+            <p>Halothane uses the standard POSIX <code>SIGSTOP</code> signal to pause a process tree. Resume sends <code>SIGCONT</code>, allowing the process to continue where it stopped.</p>
           </article>
           <article class="feat">
-            <div class="feat__icon">👥</div>
+            <div class="feat__icon" aria-hidden="true">◎</div>
             <h3>Every account, at once</h3>
-            <p>A privileged helper supervises processes across all login sessions — fast-user-switched accounts included.</p>
+            <p>A privileged helper supervises processes across all login sessions, including fast-user-switched accounts.</p>
           </article>
           <article class="feat">
-            <div class="feat__icon">🍃</div>
+            <div class="feat__icon" aria-hidden="true">≈</div>
             <h3>Featherweight</h3>
             <p>A pure, UI-free engine sampling a handful of times a second. It lives in your menu bar and stays out of your way.</p>
           </article>
           <article class="feat">
-            <div class="feat__icon">😴</div>
+            <div class="feat__icon" aria-hidden="true">Ⅱ</div>
             <h3>Snooze anytime</h3>
             <p>Heading into a heavy workload on purpose? Pause monitoring for 15 minutes, an hour, or until you say so.</p>
           </article>
@@ -293,20 +341,70 @@
       <div class="container">
         <div class="essence__grid">
           <div class="essence__card">
-            <span class="essence__ic">🛡️</span>
+            <span class="essence__ic" aria-hidden="true">◇</span>
             <h3>Safe &amp; Trusted</h3>
-            <p>Clinical calm and reliability. It freezes, never kills — your work is always recoverable.</p>
+            <p>Clinical calm and reliability. Halothane pauses processes with a standard, reversible macOS signal and keeps Resume, Quit, and Force-Kill under user control.</p>
           </div>
           <div class="essence__card">
-            <span class="essence__ic">🍃</span>
+            <span class="essence__ic" aria-hidden="true">≈</span>
             <h3>Lightweight &amp; Focused</h3>
             <p>Effortless performance. One small binary doing exactly one job, exceptionally well.</p>
           </div>
           <div class="essence__card">
-            <span class="essence__ic">✨</span>
+            <span class="essence__ic" aria-hidden="true">✦</span>
             <h3>Essential by Design</h3>
             <p>Everything you need, nothing extra. Sensible defaults, opt-in power, zero noise.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────  FAQ  ───────────────────────────── -->
+    <section class="section faq" id="faq">
+      <div class="container faq__inner">
+        <div class="section__head">
+          <p class="kicker">Quick answers</p>
+          <h2 class="section__title">What to know about Halothane.</h2>
+          <p class="section__lead">The practical details for choosing a Mac memory monitor and runaway-process guard.</p>
+        </div>
+
+        <div class="faq__list">
+          <details class="faq__item" open>
+            <summary>What problem does Halothane solve?</summary>
+            <p>Halothane watches process memory on your Mac and identifies a process that is using too much memory or growing unusually fast. It warns you early and, when you opt in, can pause the runaway before it freezes the rest of the system.</p>
+          </details>
+          <details class="faq__item">
+            <summary>How is it different from Activity Monitor?</summary>
+            <p>Activity Monitor helps you inspect processes after you open it. Halothane continuously samples the same true memory metric in the background, warns at thresholds you choose, and can pause an opted-in process tree automatically.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Does Halothane automatically kill apps?</summary>
+            <p>No. The currently distributed version pauses processes with <code>SIGSTOP</code>; it does not automatically force-quit them. Resume, Quit, and Force-Kill are deliberate actions you choose.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Can it stop a runaway before the whole Mac locks up?</summary>
+            <p>Halothane is designed to intervene early. It can warn when a process crosses a configured threshold or grows unusually fast. If you enable automatic threshold protection, it can pause the process tree; at critical macOS memory pressure, it may also pause the largest non-exempt process. No user-space utility can guarantee that it will catch every possible allocation before the system becomes unresponsive.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Which Macs are supported?</summary>
+            <p>Halothane supports macOS 14 Sonoma or later on Apple Silicon and Intel Macs. The signed and notarized app is approximately 2 MB.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Does Halothane send process data anywhere?</summary>
+            <p>No. The app runs locally and has no telemetry or analytics. It does not send process names, memory usage, or personal information off your Mac.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Can I exempt memory-heavy work?</summary>
+            <p>Yes. You can exempt apps such as local AI models, virtual machines, and large builds, or give them custom thresholds. Automatic pausing is off by default and can be enabled globally or per app.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Does it monitor every user account?</summary>
+            <p>Yes. A privileged helper monitors processes across all login sessions, including fast-user-switched accounts.</p>
+          </details>
+          <details class="faq__item">
+            <summary>How much does Halothane cost?</summary>
+            <p>Halothane is a one-time $19 purchase with a 14-day money-back guarantee. There is no subscription.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -318,10 +416,16 @@
         <img class="download__icon" src="assets/app-icon.png" alt="Halothane app icon" width="116" height="116" />
         <h2 class="section__title">Bring some calm to your Mac.</h2>
         <p class="section__lead">A one-time $19 purchase. Signed &amp; notarized. Lives quietly in your menu bar, ready the moment something goes wrong.</p>
+        <div class="download__disclosure">
+          <h3>What the installer does</h3>
+          <p>Installation requires administrator approval. Halothane installs a menu-bar app, a system LaunchDaemon, and a per-user LaunchAgent so its privileged helper can monitor process memory across login sessions.</p>
+          <p>Automatic threshold pausing is off by default. At critical macOS memory pressure, the current version may automatically pause the largest non-exempt process using <code>SIGSTOP</code>. It does not inject code into other apps, download or execute additional software, collect credentials, or send process names or memory data off your Mac.</p>
+          <p><a href="/install-details.html">Installation and behavior details</a> · <a href="/uninstall.html">Complete uninstall instructions</a> · <a href="https://github.com/sfoln/halothane">Source available on GitHub</a></p>
+        </div>
         <div class="hero__cta hero__cta--center">
           <a href="#buy" data-buy class="btn btn--primary btn--lg">
             <svg viewBox="0 0 16 20" width="16" height="20" aria-hidden="true"><path fill="currentColor" d="M13.1 15.4c-.3.7-.5 1-.9 1.6-.6.9-1.4 2-2.4 2-1 0-1.2-.6-2.5-.6s-1.6.6-2.5.6c-1 0-1.8-1-2.4-1.9C.7 14.9.5 11.7 1.9 10c.7-.9 1.7-1.4 2.7-1.4 1 0 1.7.6 2.5.6.8 0 1.3-.6 2.5-.6.9 0 1.9.5 2.6 1.4-2.3 1.2-1.9 4.5.4 5.4zM9.4 4.5c.5-.6.8-1.5.7-2.4-.8.1-1.7.5-2.3 1.2-.5.5-.9 1.4-.7 2.3.8 0 1.7-.5 2.3-1.1z"/></svg>
-            Buy Halothane — $19
+            Buy Halothane for $19
           </a>
         </div>
         <p class="hero__meta">One-time purchase · macOS 14 Sonoma or later · Apple Silicon &amp; Intel · ~2&nbsp;MB</p>
@@ -341,20 +445,22 @@
       <nav class="footer__links">
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
-        <a href="#buy">Buy</a>
+        <a href="#faq">FAQ</a>
+        <a href="#buy" data-buy>Buy</a>
         <a href="https://github.com/sfoln/halothane">GitHub</a>
+        <a href="/install-details.html">Install details</a>
+        <a href="/uninstall.html">Uninstall</a>
       </nav>
       <nav class="footer__links">
         <a href="/terms.html">Terms</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/refund.html">Refunds</a>
-        <a href="mailto:support@halothane.app">support@halothane.app</a>
+        <!--email_off--><a href="mailto:support@halothane.app">support@halothane.app</a><!--/email_off-->
       </nav>
       <p class="footer__copy">© 2026 SFOLN LLC · Halothane · halothane.app</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
-  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a047a51a6a51447f8be903021c110310"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
